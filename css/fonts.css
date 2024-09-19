@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Light.woff2") format("woff2"), url("../fonts/Geist/Geist-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Regular.woff2") format("woff2"), url("../fonts/Geist/Geist-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Medium.woff2") format("woff2"), url("../fonts/Geist/Geist-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Bold.woff2") format("woff2"), url("../fonts/Geist/Geist-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/Geist/Geist-Black.woff2") format("woff2"), url("../fonts/Geist/Geist-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HeadingNow";
+  src: url("../fonts/HeadingNow/HeadingNow-94Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "HeadingNow";
+  src: url("../fonts/HeadingNow/HeadingNow-95Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}

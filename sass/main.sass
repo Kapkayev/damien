@@ -1,0 +1,759 @@
+@import "./variables.sass"
+
+/* BASE STYLE SETTINGS START: */
+
+*
+	padding: 0px
+	margin: 0px
+	box-sizing: border-box
+
+html
+	height: 100%
+	overflow-x: hidden
+
+body
+	font-family: var(--font-family-primary)
+	scroll-behavior: smooth
+	-webkit-font-smoothing: antialiased
+	
+	overflow-x: hidden
+
+	position: relative
+
+	&::-webkit-scrollbar 
+		width: 5px
+
+	&::-webkit-scrollbar-track 
+		background: var(--color-primary-25)
+
+	&::-webkit-scrollbar-thumb 
+		background:  var(--color-primary)
+
+@mixin element_animation
+	transition-timing-function: ease-in-out
+	transition-duration: 0.2s
+
+/* BASE STYLE SETTINGS END. */
+
+
+/* WRAPPER STYLE SETTINGS START: */
+
+.wrapper-full
+	width: 100%
+	margin: 0px auto
+	padding: 0px 0px
+
+.wrapper-fix
+	width: 100%
+	max-width: 1420px
+
+	margin: 0px auto
+	padding: 0px 30px
+
+	position: relative
+
+/* WRAPPER STYLE SETTINGS END. */
+
+
+/* HEADER STYLE SETTINGS START: */
+
+.container-header
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	padding: 32px 0px
+
+.container-header__logotype
+	width: 120px
+	text-decoration: none
+
+	img
+		width: 100%
+
+.container-header__navigation
+	ul
+		display: flex
+		align-items: center
+
+		list-style-type: none
+
+		a
+			color: var(--color-brown)
+			text-decoration: none
+			padding: 10px 16px
+
+.container-header__button
+	.button
+		display: flex
+		align-items: center
+		column-gap: 12px
+
+		color: var(--color-brown)
+		font-weight: 600
+		font-size: 16px
+		text-decoration: none
+
+		@include element_animation
+
+		background-color: #F7F3F0
+		border-radius: 4px 4px
+		padding: 13px 20px
+
+		&:hover
+			background-color: #EDE9E6
+
+		&:active
+			background-color: #E1DDDA
+
+		&.disabled
+			background-color: #EDE9E6
+			color: #9B9491
+
+.container-header__mobile
+	display: none
+	cursor: pointer
+
+/* HEADER STYLE SETTINGS END. */
+
+
+/* CARD SECTION STYLE SETTINGS START: */
+
+.section-card
+	padding: 10px 0px 40px 0px
+
+.container-card
+	width: 100%
+
+	.container-card__row-01
+		display: none
+
+	.container-card__row-02
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		column-gap: 48px
+
+		.container-card__column-01
+			width: calc(50% - 24px)
+
+			.slider-container
+				display: none
+
+		.container-card__column-02
+			width: calc(50% - 24px)
+
+.container-card__block
+	.container-card__head
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		column-gap: 30px
+
+		.container-card__head-column-01
+			width: max-width
+			flex: 1
+
+			display: flex
+			flex-direction: column
+			row-gap: 10px
+
+		.container-card__head-column-02
+			width: auto
+
+		.title
+			font-weight: 600
+			font-size: 20px
+			line-height: 1.3em
+			color: #000000
+
+		.button
+			width: 44px
+			height: 44px
+			display: flex
+			justify-content: center
+			align-items: center
+
+			cursor: pointer
+			text-decoration: none
+
+			border-radius: 4px 4px
+			border: 0.5px solid #CBCBD3
+
+	.container-card__body
+		padding: 24px 0px 32px 0px
+
+		.button
+			width: fit-content
+
+			display: flex
+			align-items: center
+			column-gap: 12px
+
+			color: #FAF2F0
+			font-weight: 600
+			font-size: 16px
+			text-decoration: none
+
+			@include element_animation
+
+			background-color: var(--color-secondary)
+			border-radius: 4px 4px
+			padding: 13px 20px
+
+			&:hover
+				background-color: var(--color-secondary-hover)
+
+			&:active
+				background-color: var(--color-secondary-click)
+
+			svg path
+				stroke: #FAF2F0
+					
+.breadcrumbs
+	display: flex
+	flex-wrap: width
+	column-gap: 10px
+
+	a
+		font-size: 12px
+		line-height: 1.5em
+		color: #7F7F88
+
+		position: relative
+		text-decoration: none
+
+		&::after
+			content: '/'
+			font-size: 12px
+			line-height: 1.5em
+			position: absolute
+			right: -7.5px
+
+		&:last-child
+			color: #544C49
+
+			&::after
+				content: ''
+
+.container-card__accordeon
+	width: 100%
+	display: flex
+	flex-direction: column
+	row-gap: 16px
+
+	.container-card__item
+		width: 100%
+		border-bottom: 1px solid #DEDEE4
+
+		cursor: pointer
+
+		&.active
+			.body
+				height: auto
+				padding: 0px 24px 16px 0px
+
+		.head
+			display: flex
+			justify-content: space-between
+			align-items: center
+			padding: 13px 0px 20px 0px
+
+			p
+				text-transform: uppercase
+				font-weight: 600
+				font-size: 14px
+				line-height: 1em
+				color: #303036
+
+		.body
+			height: 0px
+			overflow: hidden
+
+			padding: 0px 24px 0px 0px
+
+			p
+				font-size: 14px
+				line-height: 1.5em
+
+				margin: 1.25em 0px
+
+			.article
+				display: flex
+				align-items: center
+				column-gap: 10px
+
+				p, span
+					font-size: 14px
+					line-height: 1.5em
+					color: #7F7F88
+
+					margin: 0px 0px
+
+			.labels
+				display: flex
+				flex-direction: column
+				row-gap: 4px
+
+				.label
+					display: flex
+					align-items: center
+					column-gap: 8px
+
+/* CARD SECTION STYLE SETTINGS END. */
+
+
+/* CARD SLIDER STYLE SETTINGS START: */
+
+.image-container
+	display: flex
+
+.large-image
+	flex: 1
+
+	img
+		width: 100%
+		height: auto
+
+.thumbnail-slider
+	width: 100px
+	display: flex
+	flex-direction: column
+	align-items: center
+
+.thumbnails 
+	display: flex
+	flex-direction: column
+	row-gap: 8px
+
+	overflow: hidden
+
+.thumbnail 
+	width: 80px
+	height: 100px
+	position: relative
+
+	cursor: pointer
+
+	border: 1px solid transparent
+	border-radius: 4px 4px
+
+	img
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		object-fit: cover
+		z-index: 1
+
+	&.active
+		border-color: #3C3330
+
+.up-arrow
+	transform: rotate(180deg)	
+
+.up-arrow,
+.down-arrow
+	width: 100%
+	height: 32px
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+
+	@include element_animation
+
+	opacity: 0.7
+	margin: 8px 0px
+
+	&:hover
+		opacity: 1
+
+/* CARD SLIDER STYLE SETTINGS END. */
+
+
+/* PRODUCTS SECTION STYLE SETTINGS START: */
+
+.section-products
+	padding: 40px 0px 80px 0px
+
+.container-products
+	display: flex
+	flex-direction: column
+	row-gap: 40px
+
+	.container-products__row-01
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+
+		.container-products__column-01
+			display: flex
+			flex-direction: column
+			row-gap: 16px
+
+			p
+				font-size: 14px
+				line-height: 1em
+				text-transform: uppercase
+
+			h2
+				font-size: 40px
+				line-height: 1.1em
+				font-weight: 700
+
+		.container-products__column-02
+			.button
+				display: flex
+				align-items: center
+				column-gap: 12px
+
+				color: var(--color-white)
+				font-weight: 600
+				font-size: 16px
+				text-decoration: none
+
+				@include element_animation
+
+				background-color: #3C3330
+				border-radius: 4px 4px
+				padding: 16px 20px
+
+				&:hover
+					background-color: #251B18
+
+				&:active
+					background-color: #0D0300
+
+				&.disabled
+					background-color: #B2ACA9
+					color: #FAF2F0
+
+				svg path
+					stroke: var(--color-white)
+
+	.container-products__row-03
+		display: none
+
+		.button
+			width: 100%
+
+			display: flex
+			align-items: center
+			justify-content: center
+			column-gap: 12px
+
+			color: var(--color-white)
+			font-weight: 600
+			font-size: 16px
+			text-decoration: none
+
+			@include element_animation
+
+			background-color: #3C3330
+			border-radius: 4px 4px
+			padding: 16px 20px
+
+			&:hover
+				background-color: #251B18
+
+			&:active
+				background-color: #0D0300
+
+			&.disabled
+				background-color: #B2ACA9
+				color: #FAF2F0
+
+			svg path
+				stroke: var(--color-white)
+
+.container-products__blocks
+	width: 100%
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	gap: 16px
+
+	.container-products__block
+		a
+			color: #303036
+			font-size: 14px
+			line-height: 1.5em
+			text-decoration: none
+
+			display: inline-block
+			margin: 8px 0px 0px 0px
+
+.slider-container
+	position: relative
+	width: 100%
+	max-width: 500px
+	margin: 0 auto
+
+	&.mobile
+		width: calc(100% + 32px)
+		position: relative
+		left: -16px
+
+.slider
+	position: relative
+	width: 100%
+	overflow: hidden
+
+.slide
+	display: none
+	width: 100%
+
+	&.active
+		display: block
+
+.slider-dots
+	position: absolute
+	bottom: 10px
+	right: 10px
+	display: flex
+
+.dot
+	height: 8px
+	width: 8px
+	display: inline-block
+
+	background-color: #000000
+	cursor: pointer
+	opacity: 0.2
+
+	border-radius: 50%
+	margin: 0 4px
+
+	&.active
+		opacity: 0.6
+
+/* PRODUCTS SECTION STYLE SETTINGS END. */
+
+
+/* FOOTER SECTION STYLE SETTINGS START: */
+
+.section-footer
+	background-color: #F7F3F0
+	padding: 60px 0px
+
+.container-footer
+	width: 100%
+	display: flex
+	flex-direction: column
+	row-gap: 40px
+
+	.container-footer__row-01
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	.container-footer__row-02
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+
+		.container-footer__column-01
+			p
+				font-size: 18ox
+				line-height: 1.3em
+				font-weight: 600
+
+.container-footer__logotype
+	width: 120px
+	text-decoration: none
+
+	img
+		width: 100%
+
+.container-footer__navigation
+	ul
+		display: flex
+		align-items: center
+
+		list-style-type: none
+
+		a
+			color: var(--color-brown)
+			text-decoration: none
+			padding: 10px 16px
+
+.container-footer__form
+	display: flex
+	column-gap: 8px
+
+	margin: 28px 0px 0px 0px
+
+	input
+		width: 256px
+		height: 48px
+
+		border: none
+		outline: none
+
+		font-family: var(--font-family-primary)
+		font-size: 16px
+		line-height: 1.1em
+		color: #A7A7B1
+
+		background-color: #FFFFFF
+		border-radius: 4px 4px
+		border: 1px solid #CBCBD3
+
+		padding: 16px 16px
+
+		&::placeholder
+			font-family: var(--font-family-primary)
+			font-size: 16px
+			line-height: 1.1em
+			color: #A7A7B1
+
+	.button
+		display: flex
+		align-items: center
+		column-gap: 12px
+
+		color: var(--color-white)
+		font-weight: 500
+		font-size: 16px
+		text-decoration: none
+
+		@include element_animation
+
+		background-color: #3C3330
+		border-radius: 4px 4px
+		padding: 13px 20px
+
+		outline: none
+		border: none
+
+		&:hover
+			background-color: #251B18
+
+		&:active
+			background-color: #0D0300
+
+		&.disabled
+			background-color: #B2ACA9
+			color: #FAF2F0
+
+.container-footer__email
+	display: flex
+	align-items: center
+	column-gap: 10px
+
+	text-decoration: none
+
+	span
+		font-size: 16px
+		line-height: 1.5em
+		color: #000000
+
+.container-footer__links
+	display: flex
+	column-gap: 12px
+	margin: 24px 0px 0px 0px
+
+	.icon
+		width: 48px
+		height: 48px
+		background-color: #3C3330
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		border-radius: 4px 4px
+
+/* FOOTER SECTION STYLE SETTINGS END. */
+
+
+/* MENU SECTION STYLE SETTINGS START: */
+
+.section-menu
+	width: 100%
+	height: 100%
+
+	background-color: var(--color-white)
+	padding: 16px 0px 96px 0px
+
+	position: fixed
+	transform: translate(100%, 80px)
+	will-change: transform
+	z-index: 200
+
+	@include element_animation
+
+	&.active
+		transform: translate(0%, 80px)
+
+	.wrapper-fix
+		height: 100%
+
+.container-menu
+	width: 100%
+	height: 100%
+
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+	.container-menu__row-02
+		display: flex
+		flex-direction: column
+		row-gap: 24px
+
+.container-menu__navigation
+	ul
+		flex-direction: column
+		align-items: flex-start
+
+		list-style-type: none
+
+		li
+			width: 100%
+			border-bottom: 1px solid #B2ACA9
+			padding: 12px 8px
+
+			a
+				width: 100%
+				display: inline-block
+				text-decoration: none
+				color: #1C0301
+				padding: 0px 0px
+
+.container-menu__links
+	display: flex
+	column-gap: 12px
+	margin: 24px 0px 0px 0px
+
+	.icon
+		width: 48px
+		height: 48px
+		background-color: #3C3330
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		border-radius: 4px 4px
+
+.container-menu__email
+	display: flex
+	align-items: center
+	column-gap: 10px
+
+	text-decoration: none
+
+	span
+		font-size: 16px
+		line-height: 1.5em
+		color: #000000
+
+/* MENU SECTION STYLE SETTINGS END. */

@@ -1,0 +1,10 @@
+@media only screen and (max-width: 500px) {
+  /* CARD SECTION STYLE SETTINGS START: */
+  .container-card .container-card__row-02 .container-card__column-01 .slider-container {
+    display: block;
+  }
+  .container-card .container-card__row-02 .image-container {
+    display: none;
+  }
+  /* CARD SECTION STYLE SETTINGS END. */
+}
