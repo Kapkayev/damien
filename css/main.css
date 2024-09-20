@@ -83,6 +83,9 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
   padding: 10px 16px;
 }
+.container-header__navigation ul a:hover {
+  text-decoration: underline;
+}
 
 .container-header__button .button {
   display: flex;
@@ -564,6 +567,9 @@ body::-webkit-scrollbar-thumb {
   color: var(--color-brown);
   text-decoration: none;
   padding: 10px 16px;
+}
+.container-footer__navigation ul a:hover {
+  text-decoration: underline;
 }
 
 .container-footer__form {

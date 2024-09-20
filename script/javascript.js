@@ -168,18 +168,48 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
     jQuery('.slider-container').each(function() {
         var $sliderContainer = jQuery(this);
+        var startX, moveX;
+        var currentIndex = 0;
+        var totalSlides = $sliderContainer.find('.slide').length;
 
         $sliderContainer.find('.dot').click(function() {
             var slideIndex = jQuery(this).data('slide');
+            currentIndex = slideIndex;
             
+            updateSlider(currentIndex);
+        });
+
+        function updateSlider(index) {
             $sliderContainer.find('.dot').removeClass('active');
-            jQuery(this).addClass('active');
+            $sliderContainer.find('.dot').eq(index).addClass('active');
             
             $sliderContainer.find('.slide').removeClass('active');
-            $sliderContainer.find('.slide').eq(slideIndex).addClass('active');
+            $sliderContainer.find('.slide').eq(index).addClass('active');
+        }
+
+        $sliderContainer.on('touchstart', function(e) {
+            startX = e.originalEvent.touches[0].clientX;
+        });
+
+        $sliderContainer.on('touchmove', function(e) {
+            moveX = e.originalEvent.touches[0].clientX;
+        });
+
+        $sliderContainer.on('touchend', function() {
+            var diffX = startX - moveX;
+
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                } else {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                }
+                updateSlider(currentIndex);
+            }
         });
     });
 });
+
 
 /*--------------------------------------------------------------
 >>> SLIDER'S CODE END.
